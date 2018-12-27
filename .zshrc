@@ -12,4 +12,4 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-export PS1="[%~]: "
+export PS1="[%c]: "
