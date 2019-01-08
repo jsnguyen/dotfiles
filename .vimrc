@@ -10,6 +10,7 @@ set lazyredraw
 set showmatch
 set incsearch
 set hlsearch
+set autoindent
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
