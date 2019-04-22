@@ -14,3 +14,4 @@ compinit
 
 export PS1="[%c]: "
 alias ls='ls -G'
+bindkey "^[[3~" delete-char
