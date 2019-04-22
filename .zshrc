@@ -13,3 +13,4 @@ compinit
 # End of lines added by compinstall
 
 export PS1="[%c]: "
+alias ls='ls -G'
