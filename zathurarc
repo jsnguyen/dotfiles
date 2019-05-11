@@ -1,0 +1,9 @@
+set recolor-darkcolor "#ebdbb2"
+set recolor-lightcolor "#1d2021"
+
+set render-loading false
+set smooth-scroll true
+
+set guioptions ""
+
+set selection-clipboard "clipboard"
