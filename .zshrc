@@ -13,5 +13,5 @@ compinit
 # End of lines added by compinstall
 
 export PS1="[%c]: "
-alias ls='ls -G'
+  alias ls='ls --color'
 bindkey "^[[3~" delete-char
