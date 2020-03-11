@@ -13,4 +13,4 @@ M ${memperc}%/${swapperc}% | \
 CPU ${cpu cpu0}% ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}% | \
 ${wireless_essid wlp2s0b1} | \
 BATT ${execi 20 (acpi -b | awk '{print $4}' | sed -e s/,//)} | \
-${time %a, %b %d %Y  %H:%M}
+${time %a, %b %d %Y  %I:%M %p}
