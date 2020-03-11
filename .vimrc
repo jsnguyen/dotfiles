@@ -29,8 +29,9 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
 Plug 'vim-airline/vim-airline'
 call plug#end()
 
-colo gruvbox
+colo dracula 
 set background=dark
