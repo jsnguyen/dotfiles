@@ -1,16 +1,18 @@
-background no
-format_human_readable yes
-out_to_console yes
-out_to_x no 
-temperature_unit fahrenheit
-total_run_times 0
-update_interval 1
-#use_spacer left
-use_spacer none
+conky.config = {
+  background=false,
+  format_human_readable=true,
+  out_to_console=true,
+  out_to_x=false,
+  temperature_unit='fahrenheit',
+  total_run_times=0,
+  update_interval=1,
+  use_spacer='left'
+}
 
-TEXT
+conky.text = [[
 M ${memperc}%/${swapperc}% | \
 CPU ${cpu cpu0}% ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}% | \
 ${wireless_essid wlp2s0b1} | \
 BATT ${execi 20 (acpi -b | awk '{print $4}' | sed -e s/,//)} | \
 ${time %a, %b %d %Y  %I:%M %p}
+]]
