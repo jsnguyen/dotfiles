@@ -28,10 +28,14 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
-Plug 'dracula/vim'
-Plug 'vim-airline/vim-airline'
+  Plug 'morhetz/gruvbox'
+  Plug 'dracula/vim'
+  Plug 'vim-airline/vim-airline'
+  Plug 'JuliaEditorSupport/julia-vim'
 call plug#end()
+
+inoremap jk <ESC>
+inoremap kj <ESC>
 
 colo dracula 
 set background=dark
