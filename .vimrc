@@ -20,6 +20,7 @@ inoremap <Down> <Nop>
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 set backspace=indent,eol,start
+filetype on
 
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -32,6 +33,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'dracula/vim'
   Plug 'vim-airline/vim-airline'
   Plug 'JuliaEditorSupport/julia-vim'
+  Plug 'junegunn/goyo.vim'
 call plug#end()
 
 inoremap jk <ESC>

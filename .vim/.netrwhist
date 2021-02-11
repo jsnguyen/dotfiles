@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/jsn/MessengerPront/node_modules'
+let g:netrw_dirhist_2='/home/jsn/MessengerPront/node_modules/accepts'
+let g:netrw_dirhist_3='/home/jsn/programs/libgphoto2-2.5.24/camlibs'
+let g:netrw_dirhist_4='/home/jsn/repos/orrery/scripts/plotSolarSystem.py'
+let g:netrw_dirhist_5='/home/jsn/.julia'
+let g:netrw_dirhist_6='/home/jsn/repos/jsnguyen.github.io'
+let g:netrw_dirhist_7='/home/jsn/repos/microfiche/public/images'
+let g:netrw_dirhist_8='/home/jsn/repos/microfiche/public/photos'
