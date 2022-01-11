@@ -1,26 +1,34 @@
-# Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
-setopt appendhistory nomatch
-bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/jsnguyen/.zshrc'
+# command history
+HISTFILE=~/.zsh_histfile
+HISTSIZE=100000
+SAVEHIST=100000
+setopt appendhistory
 
+# zsh completions
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
+# prompt
 autoload -U colors && colors
-export PS1="%{$fg[green]%}[%c]: %{$reset_color%}"
-  alias ls='ls --color'
+export PS1="%{$fg[green]%}%c | %{$reset_color%}"
+
+# delete key to work on macos
 bindkey "^[[3~" delete-char
 
+# aliases
+alias ls='ls --color'
+alias cdl='cd ~/landing'
+
+# misc
+setopt nomatch
+
+# tmux on ssh
 if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
   tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
 fi
 
-PATH=$PATH:/home/jsn/.local/bin
-export GEM_HOME="$HOME/gems" 
-export PATH="$HOME/gems/bin:$PATH"
+# always run tmux
+DEFAULT_TMUX_NAME="dtmux"
+if [[ -z "$TMUX" ]]; then
+  tmux attach-session -t ${DEFAULT_TMUX_NAME} || tmux new-session -s ${DEFAULT_TMUX_NAME}
+fi

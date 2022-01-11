@@ -39,5 +39,4 @@ call plug#end()
 inoremap jk <ESC>
 inoremap kj <ESC>
 
-colo dracula 
 set background=dark
