@@ -1,0 +1,8 @@
+** Command Line **
+zsh
+git
+tmux
+curl
+
+** Colorthemes **
+snazzy
