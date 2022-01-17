@@ -18,6 +18,7 @@ bindkey "^[[3~" delete-char
 # aliases
 alias ls='ls --color'
 alias cdl='cd ~/landing'
+alias esh='tmux detach -P'
 
 # misc
 setopt nomatch
