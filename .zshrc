@@ -25,11 +25,11 @@ setopt nomatch
 
 # tmux on ssh
 if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
-  tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
-fi
-
-# always run tmux
-DEFAULT_TMUX_NAME="dtmux"
-if [[ -z "$TMUX" ]]; then
-  tmux attach-session -t ${DEFAULT_TMUX_NAME} || tmux new-session -s ${DEFAULT_TMUX_NAME}
+    tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
+else
+    # always run tmux
+    DEFAULT_TMUX_NAME="dtmux"
+    if [[ -z "$TMUX" ]]; then
+        tmux attach-session -t ${DEFAULT_TMUX_NAME} || tmux new-session -s ${DEFAULT_TMUX_NAME}
+    fi
 fi
