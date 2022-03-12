@@ -18,6 +18,8 @@ bindkey "^[[3~" delete-char
 # aliases
 alias ls='ls --color'
 alias cdl='cd ~/landing'
+alias cdc='cd ~/landing/code'
+alias cdd='cd ~/landing/data'
 alias esh='tmux detach -P'
 
 # misc
