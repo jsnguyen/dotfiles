@@ -3,6 +3,16 @@ zsh
 git
 tmux
 curl
+gnuplot
+idl 8.8.1 (update to latest version)
+node
+htop
+julia
+valgrind
+gdb
+vim
+ffmpeg
+imagemagick
 
 ** Colorthemes **
 snazzy
