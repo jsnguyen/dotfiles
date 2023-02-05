@@ -31,12 +31,6 @@ endif
 call plug#begin('~/.vim/plugged')
   Plug 'morhetz/gruvbox'
   Plug 'dracula/vim'
-  Plug 'vim-airline/vim-airline'
-  Plug 'JuliaEditorSupport/julia-vim'
-  Plug 'junegunn/goyo.vim'
 call plug#end()
-
-inoremap jk <ESC>
-inoremap kj <ESC>
 
 set background=dark
