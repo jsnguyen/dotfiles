@@ -1,18 +1,55 @@
 ** Command Line **
 zsh
 git
+
+** Brew Install **
+vim
+python3
+rust
+julia
 tmux
 curl
 gnuplot
-idl 8.8.1 (update to latest version)
-node
 htop
-julia
-valgrind
-gdb
-vim
 ffmpeg
 imagemagick
+llvm
+libomp
+
+node
+valgrind
+gdb
+idl 8.8.1 (update to latest version)
+
+** pip install **
+numpy
+scipy
+astropy
+matplotlib
+jupyter
+jupyterlab
+
 
 ** Colorthemes **
 snazzy
+gruvbox
+dracula
+
+** Applications **
+KeePassX XC
+Discord
+Slack
+Obsidian
+Standard Notes
+IA Writer
+XQuartz
+Spotify
+Zotero
+ds9
+
+** Other Commands **
+brew install --cask keepassxc 
+brew install --cask obsidian
+brew install --cask discord
+brew install --cask standard-notes
+brew install --cask xquartz

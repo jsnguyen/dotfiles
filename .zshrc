@@ -23,7 +23,7 @@ alias cdd='cd ~/landing/data'
 alias esh='tmux detach -P'
 #alias ds9='/Applications/SAOImageDS9.app/Contents/MacOS/ds9'
 #alias ds9lock='/Applications/SAOImageDS9.app/Contents/MacOS/ds9 -lock frame image -lock scale -colorbar lock yes -lock scalelimits'
-alias sjl='~/landing/scripts/start_tmux_jupyter_lab.sh'
+alias sjl='~/landing/repos/scripts/start_tmux_jupyter_lab.sh'
 
 # misc
 setopt nomatch
