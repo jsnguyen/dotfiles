@@ -36,6 +36,7 @@ gruvbox
 dracula
 
 ** Applications **
+iTerm2
 KeePassX XC
 Discord
 Slack
@@ -53,3 +54,4 @@ brew install --cask obsidian
 brew install --cask discord
 brew install --cask standard-notes
 brew install --cask xquartz
+brew install --cask iterm2
