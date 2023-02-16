@@ -6,7 +6,7 @@ git
 vim
 python3
 rust
-julia
+juliaup
 tmux
 curl
 gnuplot
@@ -15,6 +15,7 @@ ffmpeg
 imagemagick
 llvm
 libomp
+pyenv
 
 node
 valgrind
@@ -55,3 +56,6 @@ brew install --cask discord
 brew install --cask standard-notes
 brew install --cask xquartz
 brew install --cask iterm2
+
+pyenv install 3.11.1
+pyenv global 3.11.1
