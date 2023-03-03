@@ -34,6 +34,8 @@ jupyterlab
 snazzy
 gruvbox
 dracula
+https://github.com/sindresorhus/iterm2-snazzy
+https://github.com/herrbischoff/iterm2-gruvbox
 
 # Applications 
 iTerm2
@@ -55,17 +57,29 @@ brew install --cask discord
 brew install --cask standard-notes
 brew install --cask xquartz
 brew install --cask iterm2
+brew install --cask saoimageds9
+
+# Other
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew tap homebrew/cask-fonts
+brew install font-iosevka
+brew install font-ibm-plex
+
 
 # Installing pyenv
 # For pyenv on Rocky Linux, you need these 
 yum install bzip2-devel ncurses-devel libffi-devel readline-devel sqlite-devel
 
+# pyenv on Linux
 curl https://pyenv.run | bash
+
+# Prereq for pyenv on MacOS
+brew install python-tk
 
 pyenv install 3.11.2
 pyenv global 3.11.2
 
-# Installing juliaup 
+# Installing juliaup without brew
 curl -fsSL https://install.julialang.org | sh
 
 juliaup add beta
