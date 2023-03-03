@@ -91,3 +91,6 @@ ssh-copy-id -i ~/.ssh/mykey user@host
 
 # SDKman, good for Java version control
 curl -s "https://get.sdkman.io" | bash 
+
+# Various Repos
+https://github.com/jupyterlab/jupyterlab-desktop
