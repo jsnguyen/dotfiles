@@ -74,3 +74,6 @@ juliaup default beta
 # SSH key generation
 ssh-keygen -t ed25519 -C ""
 ssh-copy-id -i ~/.ssh/mykey user@host
+
+# SDKman, good for Java version control
+curl -s "https://get.sdkman.io" | bash 
