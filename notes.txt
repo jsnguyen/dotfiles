@@ -15,8 +15,8 @@ imagemagick
 llvm
 libomp
 pyenv
-
 node
+
 valgrind
 gdb
 idl 8.8.1 (update to latest version)
