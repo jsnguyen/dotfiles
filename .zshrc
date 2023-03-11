@@ -10,7 +10,7 @@ compinit
 
 # prompt
 autoload -U colors && colors
-export PS1="%{$fg[green]%}%c | %{$reset_color%}"
+export PS1="%{$fg[green]%}%n@%c | %{$reset_color%}"
 
 # delete key to work on macos
 bindkey "^[[3~" delete-char
