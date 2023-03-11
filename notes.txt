@@ -1,10 +1,9 @@
-** Command Line **
+# Command Line
 zsh
 git
 
-** Brew Install **
+# Brew Install 
 vim
-python3
 rust
 juliaup
 tmux
@@ -16,13 +15,13 @@ imagemagick
 llvm
 libomp
 pyenv
-
 node
+
 valgrind
 gdb
 idl 8.8.1 (update to latest version)
 
-** pip install **
+# pip install 
 numpy
 scipy
 astropy
@@ -31,12 +30,14 @@ jupyter
 jupyterlab
 
 
-** Colorthemes **
+# Colorthemes 
 snazzy
 gruvbox
 dracula
+https://github.com/sindresorhus/iterm2-snazzy
+https://github.com/herrbischoff/iterm2-gruvbox
 
-** Applications **
+# Applications 
 iTerm2
 KeePassX XC
 Discord
@@ -49,13 +50,47 @@ Spotify
 Zotero
 ds9
 
-** Other Commands **
+# Other Commands 
 brew install --cask keepassxc 
 brew install --cask obsidian
 brew install --cask discord
 brew install --cask standard-notes
 brew install --cask xquartz
 brew install --cask iterm2
+brew install --cask saoimageds9
 
-pyenv install 3.11.1
-pyenv global 3.11.1
+# Other
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew tap homebrew/cask-fonts
+brew install font-iosevka
+brew install font-ibm-plex
+
+
+# Installing pyenv
+# For pyenv on Rocky Linux, you need these 
+yum install bzip2-devel ncurses-devel libffi-devel readline-devel sqlite-devel
+
+# pyenv on Linux
+curl https://pyenv.run | bash
+
+# Prereq for pyenv on MacOS
+brew install python-tk
+
+pyenv install 3.11.2
+pyenv global 3.11.2
+
+# Installing juliaup without brew
+curl -fsSL https://install.julialang.org | sh
+
+juliaup add beta
+juliaup default beta
+
+# SSH key generation
+ssh-keygen -t ed25519 -C ""
+ssh-copy-id -i ~/.ssh/mykey user@host
+
+# SDKman, good for Java version control
+curl -s "https://get.sdkman.io" | bash 
+
+# Various Repos
+https://github.com/jupyterlab/jupyterlab-desktop
