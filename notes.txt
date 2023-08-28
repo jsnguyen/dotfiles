@@ -49,6 +49,8 @@ XQuartz
 Spotify
 Zotero
 ds9
+Lightroom
+FastRawViewer
 
 # Other Commands 
 brew install --cask keepassxc 
@@ -58,13 +60,14 @@ brew install --cask standard-notes
 brew install --cask xquartz
 brew install --cask iterm2
 brew install --cask saoimageds9
+brew install --cask tigervnc-viewer
+brew install --cask visual-studio-code
 
 # Other
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew tap homebrew/cask-fonts
 brew install font-iosevka
 brew install font-ibm-plex
-
 
 # Installing pyenv
 # For pyenv on Rocky Linux, you need these 
@@ -76,8 +79,8 @@ curl https://pyenv.run | bash
 # Prereq for pyenv on MacOS
 brew install python-tk
 
-pyenv install 3.11.2
-pyenv global 3.11.2
+pyenv install 3.11.4
+pyenv global 3.11.4
 
 # Installing juliaup without brew
 curl -fsSL https://install.julialang.org | sh
