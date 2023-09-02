@@ -26,6 +26,7 @@ alias ds9='/Applications/SAOImageDS9.app/Contents/MacOS/ds9'
 alias ds9lock='/Applications/SAOImageDS9.app/Contents/MacOS/ds9 -lock frame image -colorbar lock yes -lock scalelimits'
 alias sjl='~/landing/scripts/start_tmux_jupyter_lab.sh'
 
+alias sshdquick='ssh -Y -p 12392 jsn@dquick.local'
 alias sshdecaf='ssh -Y jsn@decaf.ucsd.edu'
 alias sshtrenta='ssh -Y jsn@trenta.ucsd.edu'
 alias vnctunnel='~/landing/scripts/vnc_tunnel_decaf.sh'
