@@ -16,6 +16,7 @@ llvm
 libomp
 pyenv
 node
+alacritty
 
 valgrind
 gdb
@@ -97,3 +98,6 @@ curl -s "https://get.sdkman.io" | bash
 
 # Various Repos
 https://github.com/jupyterlab/jupyterlab-desktop
+
+# Alacritty
+# configuration dotfile needs to go in ~/.config/alacritty/alacritty.yml
