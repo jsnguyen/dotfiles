@@ -1,0 +1,19 @@
+window:
+  padding:
+    x: 7
+    y: 7
+  decorations: Buttonless
+  resize_increments: true
+font:
+  size: 14.0
+  normal:
+    family: Cozette
+cursor:
+  style:
+    shape: Block
+    blinking: always
+mouse:
+    launcher:
+      program: open
+      modifiers: Command
+
