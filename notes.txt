@@ -17,6 +17,7 @@ libomp
 pyenv
 node
 alacritty
+nvim
 
 valgrind
 gdb
