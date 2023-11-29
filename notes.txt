@@ -102,3 +102,6 @@ https://github.com/jupyterlab/jupyterlab-desktop
 
 # Alacritty
 # configuration dotfile needs to go in ~/.config/alacritty/alacritty.yml
+
+# Fish
+# make sure you add the line /usr/local/bin/fish to /etc/shells
