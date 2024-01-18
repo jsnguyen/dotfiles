@@ -19,9 +19,10 @@ alias ds9lock='/Applications/SAOImageDS9.app/Contents/MacOS/ds9 -lock frame imag
 alias sjl='~/landing/scripts/start_tmux_jupyter_lab.sh'
 
 alias sshdquick='ssh -Y -p 12392 jsn@dquick.local'
-alias sshdecaf='ssh -Y jsn@decaf.ucsd.edu'
+alias sshdecaf='ssh -Y -L 5907:localhost:5907 jsn@decaf.ucsd.edu'
 alias sshtrenta='ssh -Y jsn@trenta.ucsd.edu'
 alias vnctunnel='~/landing/scripts/vnc_tunnel_decaf.sh'
+alias backup='~/landing/scripts/decaf_backup.sh'
 
 # pyenv stuff
 if command -v pyenv 1>/dev/null 2>&1;
