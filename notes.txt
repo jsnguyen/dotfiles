@@ -1,24 +1,26 @@
+# install Xcode command line tools, Rosetta
+
 # Command Line
-zsh
 git
 
 # Brew Install 
+alacritty
 vim
 rust
 juliaup
+pyenv
 tmux
 curl
-gnuplot
 htop
 ffmpeg
 imagemagick
+fish
+
+gnuplot
 llvm
 libomp
-pyenv
-node
-alacritty
 nvim
-
+node
 valgrind
 gdb
 idl 8.8.1 (update to latest version)
@@ -31,39 +33,38 @@ matplotlib
 jupyter
 jupyterlab
 
-
 # Colorthemes 
 snazzy
 gruvbox
 dracula
-https://github.com/sindresorhus/iterm2-snazzy
-https://github.com/herrbischoff/iterm2-gruvbox
 
 # Applications 
-iTerm2
-KeePassX XC
-Discord
-Slack
-Obsidian
-Standard Notes
-IA Writer
-XQuartz
-Spotify
-Zotero
-ds9
 Lightroom
+Adobe Creative Cloud
+Microsoft Suite # use UCSD login
 FastRawViewer
+tailscale
 
 # Other Commands 
 brew install --cask keepassxc 
-brew install --cask obsidian
 brew install --cask discord
-brew install --cask standard-notes
 brew install --cask xquartz
-brew install --cask iterm2
 brew install --cask saoimageds9
 brew install --cask tigervnc-viewer
 brew install --cask visual-studio-code
+brew install --cask notion
+brew install --cask inkscape
+brew install --cask sioyek
+brew install --cask spotify
+brew install --cask slack
+brew install --cask zotero
+brew install --cask rectangle
+brew install duck
+brew install --cask google-drive
+brew install --cask mullvadvpn
+brew install --cask slack
+brew install --cask logi-options-plus
+brew install --cask notion-calendar
 
 # Other
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -78,11 +79,10 @@ yum install bzip2-devel ncurses-devel libffi-devel readline-devel sqlite-devel
 # pyenv on Linux
 curl https://pyenv.run | bash
 
-# Prereq for pyenv on MacOS
-brew install python-tk
-
-pyenv install 3.11.4
-pyenv global 3.11.4
+# pyenv stuff
+pyenv install -l
+pyenv install 3.12.4
+pyenv global 3.12.4
 
 # Installing juliaup without brew
 curl -fsSL https://install.julialang.org | sh
@@ -94,14 +94,11 @@ juliaup default beta
 ssh-keygen -t ed25519 -C ""
 ssh-copy-id -i ~/.ssh/mykey user@host
 
-# SDKman, good for Java version control
-curl -s "https://get.sdkman.io" | bash 
-
-# Various Repos
-https://github.com/jupyterlab/jupyterlab-desktop
-
 # Alacritty
-# configuration dotfile needs to go in ~/.config/alacritty/alacritty.yml
+# configuration dotfile needs to go in ~/.config/alacritty/alacritty.toml
 
 # Fish
 # make sure you add the line /usr/local/bin/fish to /etc/shells
+echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
+fish_add_path /opt/homebrew/bin
+chsh -s $(which fish)
