@@ -59,12 +59,14 @@ brew install --cask spotify
 brew install --cask slack
 brew install --cask zotero
 brew install --cask rectangle
-brew install duck
 brew install --cask google-drive
 brew install --cask mullvadvpn
 brew install --cask slack
 brew install --cask logi-options-plus
 brew install --cask notion-calendar
+brew install --cask cyberduck
+brew install --cask whatsapp
+brew install --cask chatgpt
 
 # Other
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -102,3 +104,6 @@ ssh-copy-id -i ~/.ssh/mykey user@host
 echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
 fish_add_path /opt/homebrew/bin
 chsh -s $(which fish)
+
+# Zotero
+# install BetterBibtex for citations, ZotFile for sending data to tablet
