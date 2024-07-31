@@ -8,6 +8,16 @@ function fish_prompt -d "Write out the prompt"
     printf '%s<%s %s%s%s %s>%s ' (set_color green) (set_color normal) (set_color $fish_color_cwd) (prompt_pwd -D 100) (set_color normal) (set_color green) (set_color normal)
 end
 
+function lg -d "lazy git add commit push"
+    git add .
+    git commit -a -m "$argv"
+    git push origin main
+end
+
+function ll --wraps ls --description "List contents of directory using long format -haltr"
+    ls -haltr $argv
+end
+
 alias ls='ls --color'
 alias cdl='cd ~/landing'
 alias cdp='cd ~/landing/projects'
@@ -36,7 +46,7 @@ if [ "$TERM_PROGRAM" != "vscode" ];
     else
         # always run tmux
         set DEFAULT_TMUX_NAME "dtmux"
-        if [ -z "$TMUX" ];
+        if [ -z "$TMUX" ] && [ "$ZED_TERM" != "true" ];
             tmux attach-session -t {$DEFAULT_TMUX_NAME} || tmux new-session -s {$DEFAULT_TMUX_NAME}
         end
     end
