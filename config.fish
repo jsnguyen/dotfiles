@@ -9,9 +9,14 @@ function fish_prompt -d "Write out the prompt"
 end
 
 function lg -d "lazy git add commit push"
-    git add .
-    git commit -a -m "$argv"
-    git push origin main
+	if [ (count $argv) -eq 1 ];
+		git add .
+		git commit -a -m "$argv"
+		git push origin main
+	else
+		echo "must specify a commmit message"
+	end
+	return
 end
 
 function ll --wraps ls --description "List contents of directory using long format -haltr"
@@ -46,7 +51,7 @@ if [ "$TERM_PROGRAM" != "vscode" ];
     else
         # always run tmux
         set DEFAULT_TMUX_NAME "dtmux"
-        if [ -z "$TMUX" ] && [ "$ZED_TERM" != "true" ];
+        if [ -z "$TMUX" ];
             tmux attach-session -t {$DEFAULT_TMUX_NAME} || tmux new-session -s {$DEFAULT_TMUX_NAME}
         end
     end

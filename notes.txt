@@ -68,7 +68,7 @@ brew install --cask cyberduck
 brew install --cask whatsapp
 brew install --cask chatgpt
 brew install --cask zoom
-brew install --cask zed
+brew install --cask stellarium
 
 # Other
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
