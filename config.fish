@@ -32,12 +32,17 @@ alias esh='tmux detach -P'
 alias ds9='/Applications/SAOImageDS9.app/Contents/MacOS/ds9'
 alias ds9lock='/Applications/SAOImageDS9.app/Contents/MacOS/ds9 -lock frame image -colorbar lock yes'
 alias sjl='~/landing/scripts/start_tmux_jupyter_lab.sh'
+alias sm='~/landing/scripts/start_tmux_marimo.sh'
+alias sp='~/landing/scripts/start_tmux_pluto.sh'
 
 alias sshdquick='ssh -Y -p 12392 jsn@dquick'
 alias sshdecaf='ssh -Y -L 5907:localhost:5907 jsn@decaf'
-alias sshtrenta='ssh -Y jsn@trenta.ucsd.edu'
+alias sshtrenta='ssh -Y jsn001@trenta.ucsd.edu'
 alias vnctunnel='~/landing/scripts/vnc_tunnel_decaf.sh'
 alias backup='~/landing/scripts/decaf_backup.sh'
+alias vncviewer='/Applications/VNC\ Viewer.app/Contents/MacOS/vncviewer'
+
+set -x OBJC_DISABLE_INITIALIZE_FORK_SAFETY YES
 
 # pyenv stuff
 if command -v pyenv 1>/dev/null 2>&1;
