@@ -50,7 +50,7 @@ if command -v pyenv 1>/dev/null 2>&1;
 end
 
 # tmux on ssh
-if [ "$TERM_PROGRAM" != "vscode" ];
+if [ "$TERM_PROGRAM" != "vscode" ] && [ "$TERM_PROGRAM" != "zed" ];
     if [ -z "$TMUX" ] && [ -n "$SSH_CONNECTION" ];
         tmux attach-session -t ssh_tmux || tmux new-session -s ssh_tmux
     else

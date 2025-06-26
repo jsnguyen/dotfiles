@@ -30,15 +30,15 @@ blinking = "always"
 shape = "Block"
 
 [font]
-size = 15.0
+size = 14.0
 
 [font.normal]
-family = "Iosevka Term"
+family = "JetBrains Mono"
 style = "Light"
 
 [font.offset]
-x = 1
-y = 1
+x = 0
+y = 2
 
 [[keyboard.bindings]]
 chars = "\u001Bb"
