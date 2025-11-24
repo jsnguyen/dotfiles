@@ -1,0 +1,76 @@
+Host green 
+    HostName green
+    User jsn
+    ForwardAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    ServerAliveInterval 120
+
+Host decaf
+    HostName decaf
+    User jsn
+    ForwardAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    ServerAliveInterval 120
+    LocalForward 5907 localhost:5907
+
+Host trenta
+    HostName trenta.ucsd.edu
+    User jsn001
+    ForwardAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    ServerAliveInterval 120
+
+Host espresso
+    HostName espresso
+    User jsn
+    ForwardAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    ServerAliveInterval 120
+
+Host vm-aodev
+    HostName vm-aodev
+    User jnguyen
+    ForwardAgent yes
+    ForwardX11 yes
+    ForwardX11Trusted yes
+    ServerAliveInterval 120
+
+Host nd_gate
+    HostName astro.crc.nd.edu
+    User gpiuser
+    Port 5001
+    IdentityFile ~/.ssh/id_rsa
+    HostKeyAlgorithms=+ssh-rsa
+    ForwardAgent yes
+
+Host gpi01
+    HostName ndgpi01.campus.nd.edu
+    User gpi
+    ProxyCommand ssh -W %h:%p nd_gate
+    IdentityFile ~/.ssh/id_rsa
+    HostKeyAlgorithms=+ssh-rsa
+    ForwardAgent yes
+    ForwardX11 yes
+
+Host tlc
+    HostName gpitlc
+    ProxyJump gpi01
+    User gpi
+    KexAlgorithms +diffie-hellman-group14-sha1,diffie-hellman-group-exchange-sha1,diffie-hellman-group1-sha1
+    HostKeyAlgorithms=+ssh-rsa
+    IdentityFile ~/.ssh/id_rsa
+    IdentitiesOnly yes
+    ForwardX11 yes
+    ForwardAgent yes
+
+Host kona
+    HostName 192.168.101.104
+    User kona
+    ProxyCommand ssh -W %h:%p tlc
+    ForwardX11 yes
+    IdentityFile ~/.ssh/id_rsa
+    HostKeyAlgorithms=+ssh-rsa
