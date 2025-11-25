@@ -15,15 +15,15 @@ htop
 ffmpeg
 imagemagick
 fish
+eza
+zoxide
+fzf
 
 gnuplot
 llvm
 libomp
 nvim
 node
-valgrind
-gdb
-idl 8.8.1 (update to latest version)
 
 # pip install 
 numpy
@@ -37,6 +37,7 @@ jupyterlab
 snazzy
 gruvbox
 dracula
+ayu
 
 # Applications 
 Lightroom
