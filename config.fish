@@ -5,7 +5,7 @@ function fish_prompt -d "Write out the prompt"
     printf '%s%s%s %s>%s ' (set_color $fish_color_cwd) (prompt_pwd -D 100) (set_color normal) (set_color green) (set_color normal)
 end
 
-alias ls='ls --color'
+alias ls='eza'
 alias cdl='cd ~/landing'
 alias cdp='cd ~/landing/projects'
 alias cda='cd ~/landing/analyses'
@@ -58,7 +58,12 @@ function lg -d "lazy git add commit push"
 	return
 end
 
+set -x OBJC_DISABLE_INITIALIZE_FORK_SAFETY YES
+
 # pyenv stuff
 if command -v pyenv 1>/dev/null 2>&1;
       eval "$(pyenv init -)"
 end
+
+# Added by Antigravity
+fish_add_path /Users/jsn/.antigravity/antigravity/bin

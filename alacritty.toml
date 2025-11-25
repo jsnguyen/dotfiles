@@ -1,44 +1,43 @@
-[colors.bright]
-black = "0x41505e"
-blue = "0x5ec4ff"
-cyan = "0x70e1e8"
-green = "0x8bd49c"
-magenta = "0xe27e8d"
-red = "0xd95468"
-white = "0xffffff"
-yellow = "0xebbf83"
-
-[colors.cursor]
-cursor = "0x008b94"
-text = "0xfafafa"
-
-[colors.normal]
-black = "0x333f4a"
-blue = "0x539afc"
-cyan = "0x70e1e8"
-green = "0x8bd49c"
-magenta = "0xb62d65"
-red = "0xd95468"
-white = "0xb7c5d3"
-
+# Default colors
 [colors.primary]
-background = "0x171d23"
-foreground = "0xffffff"
+background = '#0A0E14'
+foreground = '#B3B1AD'
+
+# Normal colors
+[colors.normal]
+black   = '#01060E'
+red     = '#EA6C73'
+green   = '#91B362'
+yellow  = '#F9AF4F'
+blue    = '#53BDFA'
+magenta = '#FAE994'
+cyan    = '#90E1C6'
+white   = '#C7C7C7'
+
+# Bright colors
+[colors.bright]
+black   = '#686868'
+red     = '#F07178'
+green   = '#C2D94C'
+yellow  = '#FFB454'
+blue    = '#59C2FF'
+magenta = '#FFEE99'
+cyan    = '#95E6CB'
+white   = '#FFFFFF'
 
 [cursor.style]
 blinking = "always"
 shape = "Block"
 
 [font]
-size = 14.0
+size = 13.0
 
 [font.normal]
-family = "JetBrains Mono"
-style = "Light"
+family = "Oxygen Mono"
 
 [font.offset]
 x = 0
-y = 2
+y = 1
 
 [[keyboard.bindings]]
 chars = "\u001Bb"
@@ -75,7 +74,12 @@ mods = "Alt"
 [window]
 decorations = "Buttonless"
 resize_increments = true
+opacity = 0.8
+blur = true
+
+[env]
+TERM = "xterm-256color"
 
 [window.padding]
-x = 7
-y = 7
+x = 20
+y = 20
