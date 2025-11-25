@@ -2,6 +2,12 @@ function fish_greeting
 end
 
 function fish_prompt -d "Write out the prompt"
+    if not set -q TMUX
+        set_color yellow # Choose your preferred color
+        echo -n "$(prompt_hostname) |"
+        set_color normal
+        echo -n ' '
+    end
     printf '%s%s%s %s>%s ' (set_color $fish_color_cwd) (prompt_pwd -D 100) (set_color normal) (set_color green) (set_color normal)
 end
 
