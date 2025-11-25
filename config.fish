@@ -73,3 +73,5 @@ end
 
 # Added by Antigravity
 fish_add_path /Users/jsn/.antigravity/antigravity/bin
+
+zoxide init fish | source
