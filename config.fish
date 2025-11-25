@@ -13,6 +13,7 @@ end
 
 alias ls='eza'
 alias cd='z'
+alias ll='eza -l'
 
 alias cdl='cd ~/landing'
 alias cdp='cd ~/landing/projects'
@@ -49,10 +50,6 @@ function ssh --wraps ssh --description 'Auto-detach tmux before ssh, re-attach a
     else
         command ssh $argv
     end
-end
-
-function ll --wraps ls --description "List contents of directory using long format -haltr"
-    ls -haltr $argv
 end
 
 function lg -d "lazy git add commit push"
