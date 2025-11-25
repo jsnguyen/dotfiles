@@ -18,6 +18,13 @@ fish
 eza
 zoxide
 fzf
+cyberduck
+vlc
+zoom
+zotero
+spotify
+vnc-viewer
+rectangle
 
 gnuplot
 llvm
