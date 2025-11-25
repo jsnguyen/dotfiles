@@ -12,6 +12,8 @@ function fish_prompt -d "Write out the prompt"
 end
 
 alias ls='eza'
+alias cd='z'
+
 alias cdl='cd ~/landing'
 alias cdp='cd ~/landing/projects'
 alias cda='cd ~/landing/analyses'
