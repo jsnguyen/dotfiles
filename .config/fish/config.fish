@@ -12,16 +12,16 @@ function fish_prompt -d "Write out the prompt"
 end
 
 alias ls='eza'
-alias cd='z'
 alias ll='eza -halr'
 
+alias cd='z'
+
 alias cdl='cd ~/landing'
-alias cdp='cd ~/landing/projects'
-alias cda='cd ~/landing/analyses'
-alias cdd='cd ~/landing/data'
 alias det='tmux detach -P'
+
 alias ds9='/Applications/SAOImageDS9.app/Contents/MacOS/ds9'
 alias ds9lock='/Applications/SAOImageDS9.app/Contents/MacOS/ds9 -lock frame image -colorbar lock yes'
+
 alias sjl='~/landing/scripts/start_tmux_jupyter_lab.sh'
 alias sm='~/landing/scripts/start_tmux_marimo.sh'
 alias sp='~/landing/scripts/start_tmux_pluto.sh'
@@ -29,7 +29,6 @@ alias sd='~/landing/scripts/start_tmux_dyre.sh'
 
 alias vnctunnel='~/landing/scripts/vnc_tunnel_decaf.sh'
 alias backup='~/landing/scripts/decaf_backup.sh'
-alias vncviewer='/Applications/VNC\ Viewer.app/Contents/MacOS/vncviewer'
 
 if status is-interactive
     if [ "$TERM_PROGRAM" != "vscode" ] && [ "$TERM_PROGRAM" != "zed" ];
@@ -64,18 +63,12 @@ function lg -d "lazy git add commit push"
 	return
 end
 
-set -x OBJC_DISABLE_INITIALIZE_FORK_SAFETY YES
-
 # pyenv stuff
 if command -v pyenv 1>/dev/null 2>&1;
       eval "$(pyenv init -)"
 end
 
-# Added by Antigravity
-fish_add_path /Users/jsn/.antigravity/antigravity/bin
-
-set -xa PYTHONPATH /Users/jsn/landing/programs/PyAO
+set -x OBJC_DISABLE_INITIALIZE_FORK_SAFETY YES
 
 zoxide init fish | source
 fzf --fish | source
-

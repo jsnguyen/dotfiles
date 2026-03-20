@@ -1,5 +1,15 @@
 # Dotfiles
 
+Converted everything to using GNU Stow.
+
+Should work like (dry run):
+
+``` sh
+stow -n -v --adopt dotfiles/ -t ~da
+```
+
+Remove `-n` to actually do it.
+
 ## Mac Stuff
 Install Xcode command line tools, Rosetta
 
