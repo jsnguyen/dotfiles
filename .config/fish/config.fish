@@ -22,13 +22,13 @@ alias det='tmux detach -P'
 alias ds9='/Applications/SAOImageDS9.app/Contents/MacOS/ds9'
 alias ds9lock='/Applications/SAOImageDS9.app/Contents/MacOS/ds9 -lock frame image -colorbar lock yes'
 
-alias sjl='~/landing/scripts/start_tmux_jupyter_lab.sh'
-alias sm='~/landing/scripts/start_tmux_marimo.sh'
-alias sp='~/landing/scripts/start_tmux_pluto.sh'
-alias sd='~/landing/scripts/start_tmux_dyre.sh'
+alias sjl='~/.scripts/start_tmux_jupyter_lab.sh'
+alias sm='~/.scripts/start_tmux_marimo.sh'
+alias sp='~/.scripts/start_tmux_pluto.sh'
+alias sd='~/.scripts/start_tmux_dyre.sh'
 
-alias vnctunnel='~/landing/scripts/vnc_tunnel_decaf.sh'
-alias backup='~/landing/scripts/decaf_backup.sh'
+alias vnctunnel='~/.scripts/vnc_tunnel_decaf.sh'
+alias backup='~/.scripts/decaf_backup.sh'
 
 if status is-interactive
     if [ "$TERM_PROGRAM" != "vscode" ] && [ "$TERM_PROGRAM" != "zed" ];
