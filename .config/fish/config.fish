@@ -13,7 +13,7 @@ end
 
 alias ls='eza'
 alias cd='z'
-alias ll='eza -l'
+alias ll='eza -halr'
 
 alias cdl='cd ~/landing'
 alias cdp='cd ~/landing/projects'
@@ -25,6 +25,7 @@ alias ds9lock='/Applications/SAOImageDS9.app/Contents/MacOS/ds9 -lock frame imag
 alias sjl='~/landing/scripts/start_tmux_jupyter_lab.sh'
 alias sm='~/landing/scripts/start_tmux_marimo.sh'
 alias sp='~/landing/scripts/start_tmux_pluto.sh'
+alias sd='~/landing/scripts/start_tmux_dyre.sh'
 
 alias vnctunnel='~/landing/scripts/vnc_tunnel_decaf.sh'
 alias backup='~/landing/scripts/decaf_backup.sh'
@@ -73,4 +74,8 @@ end
 # Added by Antigravity
 fish_add_path /Users/jsn/.antigravity/antigravity/bin
 
+set -xa PYTHONPATH /Users/jsn/landing/programs/PyAO
+
 zoxide init fish | source
+fzf --fish | source
+
