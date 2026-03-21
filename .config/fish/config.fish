@@ -18,14 +18,25 @@ alias cd='z'
 
 alias cdl='cd ~/landing'
 alias det='tmux detach -P'
+alias att='~/.scripts/reattach_dtmux.sh'
 
 alias ds9='/Applications/SAOImageDS9.app/Contents/MacOS/ds9'
 alias ds9lock='/Applications/SAOImageDS9.app/Contents/MacOS/ds9 -lock frame image -colorbar lock yes'
 
-alias sjl='~/.scripts/start_tmux_jupyter_lab.sh'
-alias sm='~/.scripts/start_tmux_marimo.sh'
-alias sp='~/.scripts/start_tmux_pluto.sh'
-alias sd='~/.scripts/start_tmux_dyre.sh'
+function st
+    switch $argv[1]
+        case jl
+            ~/.scripts/start_tmux_jupyter_lab.sh
+        case m
+            ~/.scripts/start_tmux_marimo.sh
+        case p
+            ~/.scripts/start_tmux_pluto.sh
+        case d
+            ~/.scripts/start_tmux_dyre.sh
+        case '*'
+            echo "unknown shortcut: $argv[1]"
+    end
+end
 
 alias vnctunnel='~/.scripts/vnc_tunnel_decaf.sh'
 alias backup='~/.scripts/decaf_backup.sh'
