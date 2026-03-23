@@ -41,8 +41,10 @@ end
 alias vnctunnel='~/.scripts/vnc_tunnel_decaf.sh'
 alias backup='~/.scripts/decaf_backup.sh'
 
+set skip_programs vscode zed codex
+
 if status is-interactive
-    if [ "$TERM_PROGRAM" != "vscode" ] && [ "$TERM_PROGRAM" != "zed" ];
+    if not contains -- $TERM_PROGRAM $skip_programs && not set -q CODEX_SHELL
         if [ -z "$TMUX" ] && [ -n "$SSH_CONNECTION" ];
             tmux new-session -A -s ssh_tmux
         else
