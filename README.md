@@ -5,10 +5,24 @@ Converted everything to using GNU Stow.
 Should work like (dry run):
 
 ``` sh
-stow -n -v --adopt dotfiles/ -t ~da
+stow -n -R -v dotfiles/ -t ~
 ```
 
 Remove `-n` to actually do it.
+
+## Caddy
+
+Caddy reverse proxy used so that you can just navigate to `http://jupyter`, or `http://marimo`
+
+Caddy starts on startup using plists on MacOS
+
+Also need to add the following to `/etc/hosts`
+
+```
+127.0.0.1 jupyter
+127.0.0.1 marimo
+127.0.0.1 pluto
+```
 
 ## Mac Stuff
 Install Xcode command line tools, Rosetta

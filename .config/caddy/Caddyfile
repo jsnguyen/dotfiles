@@ -1,0 +1,14 @@
+http://jupyter {
+    reverse_proxy localhost:8888
+}
+
+http://marimo {
+    reverse_proxy localhost:2718
+}
+
+http://pluto {
+    reverse_proxy localhost:1234 {
+        header_up Host {host}
+        header_up X-Real-IP {remote}
+    }
+}
