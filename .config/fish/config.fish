@@ -38,6 +38,7 @@ function st
     end
 end
 
+
 alias vnctunnel='~/.scripts/vnc_tunnel_decaf.sh'
 alias backup='~/.scripts/decaf_backup.sh'
 
@@ -76,9 +77,13 @@ function lg -d "lazy git add commit push"
 	return
 end
 
+
+set -gx PYENV_ROOT "$HOME/.pyenv"
+set -gx PATH "$PYENV_ROOT/bin:$PATH"
 # pyenv stuff
 if command -v pyenv 1>/dev/null 2>&1;
       eval "$(pyenv init -)"
+      eval "$(pyenv virtualenv-init -)"
 end
 
 set -x OBJC_DISABLE_INITIALIZE_FORK_SAFETY YES
