@@ -18,7 +18,7 @@ alias cd='z'
 
 alias cdl='cd ~/landing'
 alias det='tmux detach -P'
-alias att='~/.scripts/reattach_dtmux.sh'
+alias att='~/.scripts/reattach_atmux.sh'
 
 alias ds9='/Applications/SAOImageDS9.app/Contents/MacOS/ds9'
 alias ds9lock='/Applications/SAOImageDS9.app/Contents/MacOS/ds9 -lock frame image -colorbar lock yes'
@@ -33,6 +33,8 @@ function st
             ~/.scripts/start_tmux_pluto.sh
         case d
             ~/.scripts/start_tmux_dyre.sh
+        case cc
+            ~/.scripts/start_tmux_claude_code.sh
         case '*'
             echo "unknown shortcut: $argv[1]"
     end
@@ -50,7 +52,7 @@ if status is-interactive
             tmux new-session -A -s ssh_tmux
         else
             # always run tmux
-            set DEFAULT_TMUX_NAME "dtmux"
+            set DEFAULT_TMUX_NAME "atmux"
             if [ -z "$TMUX" ];
                 tmux attach-session -t {$DEFAULT_TMUX_NAME} || tmux new-session -s {$DEFAULT_TMUX_NAME}
             end
@@ -60,7 +62,7 @@ end
 
 function ssh --wraps ssh --description 'Auto-detach tmux before ssh, re-attach after'
     if set -q TMUX
-        tmux detach -E "ssh $argv; tmux new-session -A -s dtmux"
+        tmux detach -E "ssh $argv; tmux new-session -A -s atmux"
     else
         command ssh $argv
     end
