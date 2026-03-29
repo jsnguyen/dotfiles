@@ -1,3 +1,4 @@
 #!/bin/bash
 
-rsync -avzh --progress --exclude .bzvol --exclude '.DS_Store' --exclude '.Spotlight-V100' --exclude '.fseventsd' --exclude '.DocumentRevisions-V100' --exclude '.TemporaryItems' /Volumes/QNDA/ /Volumes/QNDB
+rsync -avzh --progress /Volumes/QNDA/ /Volumes/QNDB --exclude-from=exclude_list.txt
+rsync -avzh --progress /Volumes/QNDB/ /Volumes/QNDA --exclude-from=exclude_list.txt

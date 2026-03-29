@@ -1,0 +1,7 @@
+.bzvol
+.Spotlight-V100
+.Trashes
+.DocumentRevisions-V100
+.TemporaryItems
+.DS_Store
+.fseventsd

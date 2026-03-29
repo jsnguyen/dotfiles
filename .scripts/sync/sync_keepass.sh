@@ -1,12 +1,14 @@
 #!/bin/bash
 
+KEEPASS_FILE=/Users/jsn/landing/docs/jsn_db.kdbx
+
 if [ "${1}" = "qnap" ]; then
     echo "Backing up to qnap..."
-    rsync -avzh /Users/jsn/landing/docs/jsn_db.kdbx /Volumes/QNDA
-    rsync -avzh /Users/jsn/landing/docs/jsn_db.kdbx /Volumes/QNDB
+    rsync -avzh "$KEEPASS_FILE" /Volumes/QNDA
+    rsync -avzh "$KEEPASS_FILE" /Volumes/QNDB
 fi
 
 if [ "${1}" = "SSXP" ]; then
     echo "Backing up to SSXP..."
-    rsync -avzh /Users/jsn/landing/docs/jsn_db.kdbx /Volumes/SSXP
+    rsync -avzh "$KEEPASS_FILE" /Volumes/SSXP
 fi
