@@ -111,4 +111,10 @@ fzf --fish | source
 
 set -gx PATH "$HOME/.scripts:$PATH"
 
+if test -f ~/.config/fish/secrets.fish
+    source ~/.config/fish/secrets.fish
+end
+
 set -gx TERM xterm-256color
+
+

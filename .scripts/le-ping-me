@@ -8,8 +8,8 @@ Usage:
   le-ping-me [options] command [args...]
 
 Options:
-  --bot-token TOKEN   Telegram bot token. Defaults to TELEGRAM_BOT_TOKEN.
-  --chat-id ID        Telegram chat ID. Defaults to TELEGRAM_CHAT_ID.
+  --bot-token TOKEN   Telegram bot token. Defaults to TELEGRAM_LPM_BOT_TOKEN.
+  --chat-id ID        Telegram chat ID. Defaults to TELEGRAM_LPM_CHAT_ID.
   --log-file PATH     Save the combined stdout/stderr log to PATH.
   --label TEXT        Label shown in the Telegram message.
   --quiet             Suppress all local terminal output.
@@ -17,8 +17,8 @@ Options:
   -h, --help          Show this help text.
 
 Examples:
-  export TELEGRAM_BOT_TOKEN=123456:ABCDEF
-  export TELEGRAM_CHAT_ID=987654321
+  export TELEGRAM_LPM_BOT_TOKEN=123456:ABCDEF
+  export TELEGRAM_LPM_CHAT_ID=987654321
 
   lpm echo "test"
   lpm --quiet python3 -m thermal_house.cli simulate --config sample_house.json
@@ -52,8 +52,8 @@ format_duration() {
   fi
 }
 
-BOT_TOKEN="${TELEGRAM_BOT_TOKEN:-}"
-CHAT_ID="${TELEGRAM_CHAT_ID:-}"
+BOT_TOKEN="${TELEGRAM_LPM_BOT_TOKEN:-}"
+CHAT_ID="${TELEGRAM_LPM_CHAT_ID:-}"
 LOG_FILE=""
 LABEL=""
 QUIET=0
@@ -101,8 +101,8 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-[[ -n "$BOT_TOKEN" ]] || die "Missing Telegram bot token. Set TELEGRAM_BOT_TOKEN or pass --bot-token."
-[[ -n "$CHAT_ID" ]] || die "Missing Telegram chat ID. Set TELEGRAM_CHAT_ID or pass --chat-id."
+[[ -n "$BOT_TOKEN" ]] || die "Missing Telegram bot token. Set TELEGRAM_LPM_BOT_TOKEN or pass --bot-token."
+[[ -n "$CHAT_ID" ]] || die "Missing Telegram chat ID. Set TELEGRAM_LPM_CHAT_ID or pass --chat-id."
 [[ $# -gt 0 ]] || die "Missing command. Usage: lpm [options] command [args...]"
 command -v curl >/dev/null 2>&1 || die "curl is required but was not found in PATH."
 
