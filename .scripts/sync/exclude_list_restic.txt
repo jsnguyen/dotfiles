@@ -1,0 +1,9 @@
+**/.bzvol
+**/.DS_Store
+**/.Spotlight-V100
+**/.Trashes
+**/.DocumentRevisions-V100
+**/.TemporaryItems
+**/.fseventsd
+**/.apdisk
+**/._*

@@ -1,0 +1,190 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+Usage:
+  lpm [options] command [args...]
+  le-ping-me [options] command [args...]
+
+Options:
+  --bot-token TOKEN   Telegram bot token. Defaults to TELEGRAM_BOT_TOKEN.
+  --chat-id ID        Telegram chat ID. Defaults to TELEGRAM_CHAT_ID.
+  --log-file PATH     Save the combined stdout/stderr log to PATH.
+  --label TEXT        Label shown in the Telegram message.
+  --quiet             Suppress all local terminal output.
+  --no-output         Alias for --quiet.
+  -h, --help          Show this help text.
+
+Examples:
+  export TELEGRAM_BOT_TOKEN=123456:ABCDEF
+  export TELEGRAM_CHAT_ID=987654321
+
+  lpm echo "test"
+  lpm --quiet python3 -m thermal_house.cli simulate --config sample_house.json
+  le-ping-me --label nightly-run bash -lc 'long_job.sh --flag 2>&1'
+EOF
+}
+
+die() {
+  printf '%s\n' "$*" >&2
+  exit 1
+}
+
+quote_command() {
+  printf '%q ' "$@"
+}
+
+format_duration() {
+  local total_seconds="$1"
+  local hours minutes seconds
+
+  hours=$((total_seconds / 3600))
+  minutes=$(((total_seconds % 3600) / 60))
+  seconds=$((total_seconds % 60))
+
+  if (( hours > 0 )); then
+    printf '%dh %dm %ds' "$hours" "$minutes" "$seconds"
+  elif (( minutes > 0 )); then
+    printf '%dm %ds' "$minutes" "$seconds"
+  else
+    printf '%ds' "$seconds"
+  fi
+}
+
+BOT_TOKEN="${TELEGRAM_BOT_TOKEN:-}"
+CHAT_ID="${TELEGRAM_CHAT_ID:-}"
+LOG_FILE=""
+LABEL=""
+QUIET=0
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --bot-token)
+      [[ $# -ge 2 ]] || die "Missing value for --bot-token"
+      BOT_TOKEN="$2"
+      shift 2
+      ;;
+    --chat-id)
+      [[ $# -ge 2 ]] || die "Missing value for --chat-id"
+      CHAT_ID="$2"
+      shift 2
+      ;;
+    --log-file)
+      [[ $# -ge 2 ]] || die "Missing value for --log-file"
+      LOG_FILE="$2"
+      shift 2
+      ;;
+    --label)
+      [[ $# -ge 2 ]] || die "Missing value for --label"
+      LABEL="$2"
+      shift 2
+      ;;
+    --quiet|--no-output)
+      QUIET=1
+      shift
+      ;;
+    -h|--help)
+      usage
+      exit 0
+      ;;
+    --)
+      shift
+      break
+      ;;
+    -*)
+      die "Unknown option: $1. Put the wrapped command after -- if needed."
+      ;;
+    *)
+      break
+      ;;
+  esac
+done
+
+[[ -n "$BOT_TOKEN" ]] || die "Missing Telegram bot token. Set TELEGRAM_BOT_TOKEN or pass --bot-token."
+[[ -n "$CHAT_ID" ]] || die "Missing Telegram chat ID. Set TELEGRAM_CHAT_ID or pass --chat-id."
+[[ $# -gt 0 ]] || die "Missing command. Usage: lpm [options] command [args...]"
+command -v curl >/dev/null 2>&1 || die "curl is required but was not found in PATH."
+
+RUNTIME_DIR="$(mktemp -d)"
+
+if [[ -n "$LOG_FILE" ]]; then
+  mkdir -p "$(dirname "$LOG_FILE")"
+  LOG_PATH="$LOG_FILE"
+else
+  LOG_PATH="$RUNTIME_DIR/command_output_$(date +%Y%m%d_%H%M%S).txt"
+fi
+
+cleanup() {
+  if [[ -d "${RUNTIME_DIR:-}" ]]; then
+    rm -rf "$RUNTIME_DIR"
+  fi
+}
+
+trap cleanup EXIT
+
+COMMAND=( "$@" )
+COMMAND_PRETTY="$(quote_command "${COMMAND[@]}")"
+COMMAND_PRETTY="${COMMAND_PRETTY% }"
+START_TS="$(date +%s)"
+START_ISO="$(date '+%Y-%m-%d %-I:%M:%S %p')"
+
+set +e
+TEE_STATUS=0
+if (( QUIET )); then
+  "${COMMAND[@]}" >"$LOG_PATH" 2>&1
+  COMMAND_STATUS=$?
+else
+  PIPE_PATH="$RUNTIME_DIR/command_stream.pipe"
+  mkfifo "$PIPE_PATH"
+  tee "$LOG_PATH" <"$PIPE_PATH" &
+  TEE_PID=$!
+  "${COMMAND[@]}" >"$PIPE_PATH" 2>&1
+  COMMAND_STATUS=$?
+  wait "$TEE_PID" || TEE_STATUS=$?
+fi
+set -e
+
+if (( TEE_STATUS != 0 && COMMAND_STATUS == 0 )); then
+  COMMAND_STATUS="$TEE_STATUS"
+fi
+
+END_TS="$(date +%s)"
+DURATION="$(format_duration "$((END_TS - START_TS))")"
+
+if (( COMMAND_STATUS == 0 )); then
+  STATUS_LINE="success"
+else
+  STATUS_LINE="failure"
+fi
+
+MESSAGE=$(
+  printf '%s\n' \
+    "${START_ISO}" \
+    "${COMMAND_PRETTY}" \
+    "${DURATION}" \
+    "${STATUS_LINE}"
+)
+
+NOTIFY_FAILED=0
+
+if ! curl -fsS -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendDocument" \
+  --connect-timeout 5 \
+  --max-time 10 \
+  -F "chat_id=${CHAT_ID}" \
+  -F "caption=${MESSAGE}" \
+  -F "document=@${LOG_PATH};filename=command_output.txt" \
+  >/dev/null; then
+  NOTIFY_FAILED=1
+  if (( QUIET == 0 )); then
+    printf 'Failed to upload Telegram output log.\n' >&2
+  fi
+fi
+
+if (( COMMAND_STATUS != 0 )); then
+  exit "$COMMAND_STATUS"
+fi
+
+if (( NOTIFY_FAILED != 0 )); then
+  exit 1
+fi

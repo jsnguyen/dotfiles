@@ -2,13 +2,27 @@ function fish_greeting
 end
 
 function fish_prompt -d "Write out the prompt"
+    set -l last_status $status
+
     if not set -q TMUX
-        set_color yellow # Choose your preferred color
-        echo -n "$(prompt_hostname) |"
+        set_color brblack
+        echo -n ":: "
         set_color normal
-        echo -n ' '
     end
-    printf '%s%s%s %s>%s ' (set_color $fish_color_cwd) (prompt_pwd -D 100) (set_color normal) (set_color green) (set_color normal)
+
+    set_color $fish_color_cwd
+    echo -n (prompt_pwd -D 100)
+    set_color normal
+
+    if test $last_status -eq 0
+        set_color cyan
+        echo -n " ❯ "
+    else
+        set_color red
+        echo -n " ❯ "
+    end
+
+    set_color normal
 end
 
 alias ls='eza'
@@ -46,19 +60,19 @@ alias backup='~/.scripts/decaf_backup.sh'
 
 set skip_programs vscode zed codex
 
-if status is-interactive
-    if not contains -- $TERM_PROGRAM $skip_programs && not set -q CODEX_SHELL
-        if [ -z "$TMUX" ] && [ -n "$SSH_CONNECTION" ];
-            tmux new-session -A -s ssh_tmux
-        else
-            # always run tmux
-            set DEFAULT_TMUX_NAME "atmux"
-            if [ -z "$TMUX" ];
-                tmux attach-session -t {$DEFAULT_TMUX_NAME} || tmux new-session -s {$DEFAULT_TMUX_NAME}
-            end
-        end
-    end
-end
+#if status is-interactive
+#    if not contains -- $TERM_PROGRAM $skip_programs && not set -q CODEX_SHELL
+#        if [ -z "$TMUX" ] && [ -n "$SSH_CONNECTION" ];
+#            tmux new-session -A -s ssh_tmux
+#        else
+#            # always run tmux
+#            set DEFAULT_TMUX_NAME "atmux"
+#            if [ -z "$TMUX" ];
+#                tmux attach-session -t {$DEFAULT_TMUX_NAME} || tmux new-session -s {$DEFAULT_TMUX_NAME}
+#            end
+#        end
+#    end
+#end
 
 function ssh --wraps ssh --description 'Auto-detach tmux before ssh, re-attach after'
     if set -q TMUX
@@ -90,5 +104,12 @@ end
 
 set -x OBJC_DISABLE_INITIALIZE_FORK_SAFETY YES
 
+fish_add_path /opt/homebrew/share/android-commandlinetools/platform-tools
+
 zoxide init fish | source
 fzf --fish | source
+
+set -gx TELEGRAM_BOT_TOKEN "8136346113:AAGFIAIrs0sDWx2V7hwXBmRfDQqMx8sV_t4"
+set -gx TELEGRAM_CHAT_ID "8598451846"
+
+set -gx PATH "$HOME/.scripts:$PATH"
