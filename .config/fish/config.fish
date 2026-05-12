@@ -109,7 +109,6 @@ fish_add_path /opt/homebrew/share/android-commandlinetools/platform-tools
 zoxide init fish | source
 fzf --fish | source
 
-set -gx TELEGRAM_BOT_TOKEN "8136346113:AAGFIAIrs0sDWx2V7hwXBmRfDQqMx8sV_t4"
-set -gx TELEGRAM_CHAT_ID "8598451846"
-
 set -gx PATH "$HOME/.scripts:$PATH"
+
+set -gx TERM xterm-256color
