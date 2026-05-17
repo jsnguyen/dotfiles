@@ -21,3 +21,5 @@ adjust-cursor-thickness = 2
 macos-titlebar-style = tabs
 
 window-colorspace = display-p3
+
+unfocused-split-opacity = 0.45
