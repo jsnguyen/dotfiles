@@ -1,0 +1,56 @@
+WALK ERROR: [Errno 1] Operation not permitted: '/Volumes/QNDB/.Spotlight-V100'
+WALK ERROR: [Errno 1] Operation not permitted: '/Volumes/QNDB/.Trashes'
+WALK ERROR: [Errno 1] Operation not permitted: '/Volumes/QNDB/.DocumentRevisions-V100'
+WALK ERROR: [Errno 1] Operation not permitted: '/Volumes/QNDB/.TemporaryItems'
+/Volumes/QNDB/photos/Katie Engagement/2024-11-09_Katie_Engagement-257.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/Katie Engagement/2024-11-09_Katie_Engagement-256.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/Katie Engagement/2024-11-09_Katie_Engagement-254.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/Katie Engagement/2024-11-09_Katie_Engagement-255.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/Katie Engagement/2024-11-09_Katie_Engagement-251.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/Katie Engagement/2024-11-09_Katie_Engagement-252.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/Katie Engagement/2024-11-09_Katie_Engagement-253.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/Katie Engagement/2024-11-09_Katie_Engagement-262.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/Katie Engagement/2024-11-09_Katie_Engagement-26.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/Katie Engagement/2024-11-09_Katie_Engagement-261.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/Katie Engagement/2024-11-09_Katie_Engagement-260.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/Katie Engagement/2024-11-09_Katie_Engagement-258.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/Katie Engagement/2024-11-09_Katie_Engagement-259.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/All_Lightroom_Exports/2022-11-15_Strike-66.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/All_Lightroom_Exports/2022-11-15_Strike-64.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/All_Lightroom_Exports/2022-11-15_Strike-58.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/All_Lightroom_Exports/2022-11-15_Strike-59.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/All_Lightroom_Exports/2022-11-15_Strike-65.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/All_Lightroom_Exports/2022-11-15_Strike-61.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/All_Lightroom_Exports/2022-11-15_Strike-60.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/All_Lightroom_Exports/2022-11-15_Strike-62.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/All_Lightroom_Exports/2022-11-15_Strike-63.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/All_Lightroom_Exports/2022-11-15_Strike-54.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/All_Lightroom_Exports/2022-11-15_Strike-55.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/All_Lightroom_Exports/2022-11-15_Strike-57.jpg
+    FileNotFoundError(2, 'No such file or directory')
+/Volumes/QNDB/photos/All_Lightroom_Exports/2022-11-15_Strike-56.jpg
+    FileNotFoundError(2, 'No such file or directory')

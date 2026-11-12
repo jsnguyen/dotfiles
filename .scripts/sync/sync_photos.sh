@@ -9,3 +9,7 @@ fi
 if [ "${1}" = "SSXP" ]; then
     rsync --exclude-from='exclude_list.txt' -avzh --progress "$PHOTOS_FOLDER" /Volumes/SSXP/photos
 fi
+
+if [ "${1}" = "synology" ]; then
+    rsync --exclude-from='exclude_list.txt' -avzh --progress "$PHOTOS_FOLDER" jsn@skylab.local:/volume1/storage/photos
+fi

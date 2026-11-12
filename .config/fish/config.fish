@@ -98,8 +98,8 @@ set -gx PYENV_ROOT "$HOME/.pyenv"
 set -gx PATH "$PYENV_ROOT/bin:$PATH"
 # pyenv stuff
 if command -v pyenv 1>/dev/null 2>&1;
-      eval "$(pyenv init -)"
-      eval "$(pyenv virtualenv-init -)"
+      eval "$(pyenv init - --no-rehash fish)"
+      eval "$(pyenv virtualenv-init - fish)"
 end
 
 set -x OBJC_DISABLE_INITIALIZE_FORK_SAFETY YES
@@ -117,4 +117,9 @@ end
 
 set -gx TERM xterm-256color
 
-
+set -gx MCFOST_INSTALL "$HOME/landing/programs/mcfost"
+set -gx MCFOST_UTILS "$MCFOST_INSTALL/utils"
+set -gx MCFOST_GIT 1
+set -gx MCFOST_AUTO_UPDATE 0
+set -gx MCFOST_XGBOOST yes
+fish_add_path "$MCFOST_INSTALL/src"
